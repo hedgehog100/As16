@@ -1,4 +1,8 @@
 <?php
+session_start();
+if(!isset($_SESSION['username'])){
+    header("Location: login.php");
+}
 # This process inserts a record. There is no display.
 
 # 1. connect to database
