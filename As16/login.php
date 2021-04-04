@@ -34,9 +34,6 @@
             $password_salt = $result['password_salt'];
             
             $password = htmlspecialchars($_POST['password']);
-           // echo MD5($password_salt + $_POST['password'], TRUE);
-            //echo $password_hash;
-            // $password_salt = htmlspecialchars($password_salt);
             if($result && $password_hash == MD5($password . $password_salt)){
                 $_SESSION['username'] = $result['email'];
                 header('location: display_list.php');  //redirect
@@ -46,9 +43,6 @@
             }
         }
     }
-    //else just display the input form
-    
-    //print_r($_SESSION);
 ?>
 
 <!DOCTYPE html>
